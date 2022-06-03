@@ -86,7 +86,6 @@ class WeatherFragment : Fragment() {
         binding.forecastRV.adapter = adapter
         weatherViewModel.locationLiveData.observe(viewLifecycleOwner) {
             weatherViewModel.fetchData(preference.getTempUnitStatus())
-            //Toast.makeText(requireActivity(), "${it.latitude}, ${it.longitude}", Toast.LENGTH_SHORT).show()
         }
         weatherViewModel.currentLiveData.observe(viewLifecycleOwner) {
             Log.d("WeatherFragment", "${it.main.temp}")
