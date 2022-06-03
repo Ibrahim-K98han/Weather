@@ -19,11 +19,9 @@ class MainActivity : AppCompatActivity() {
         when {
             permissions.getOrDefault(Manifest.permission.ACCESS_FINE_LOCATION, false) -> {
                 detectUserLocation()
-                //Toast.makeText(this, "precise granted", Toast.LENGTH_SHORT).show()
             }
             permissions.getOrDefault(Manifest.permission.ACCESS_COARSE_LOCATION, false) -> {
                 detectUserLocation()
-                //Toast.makeText(this, "approximate granted", Toast.LENGTH_SHORT).show()
             } else -> {
             //Toast.makeText(this, "permission denied", Toast.LENGTH_SHORT).show()
         }
