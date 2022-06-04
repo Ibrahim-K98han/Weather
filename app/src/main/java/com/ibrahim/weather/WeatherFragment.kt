@@ -88,11 +88,9 @@ class WeatherFragment : Fragment() {
             weatherViewModel.fetchData(preference.getTempUnitStatus())
         }
         weatherViewModel.currentLiveData.observe(viewLifecycleOwner) {
-            Log.d("WeatherFragment", "${it.main.temp}")
             binding.current = it
         }
         weatherViewModel.forecastLiveData.observe(viewLifecycleOwner) {
-            Log.d("WeatherFragment", "${it.list.size}")
             adapter.submitList(it.list)
         }
         binding.tempSwitch.setOnCheckedChangeListener { compoundButton, isOn ->
